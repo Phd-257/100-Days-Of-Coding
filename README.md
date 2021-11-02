@@ -1,9 +1,9 @@
 # Hundred_Days_Of_Code
 
 
-Each Day, We Will try to Solve GeeksForGeeks/HackerRank/leetCode Problem 
+Each Day, I will be trying to Solve GeeksForGeeks/HackerRank/leetCode Problem 
                               or
-try to understande different algo and Data Structure
+try to understand different algorithms and Data Structure
 
 
 Topics we will be doing is
