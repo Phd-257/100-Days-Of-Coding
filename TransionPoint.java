@@ -1,4 +1,4 @@
-package Arrays;
+package Hundred_Days_Of_Code;;
 
 public class TransionPoint {
     public static void main(String[] args) {
