@@ -1,5 +1,7 @@
 package Hundred_Days_Of_Code;
 
+import java.util.Arrays;
+
 // Given two sorted arrays arr1[] and arr2[] of sizes n 
 //and m in non-decreasing order. Merge them in 
 //sorted order without using any extra space. Modify arr1 
@@ -25,65 +27,34 @@ public class MergeWoExtraSpace {
         
 
     public static void main(String[] args) {
-        int arr1[] ={1 ,3 ,5, 7} ;
-        int arr2[] ={0 ,2 ,6 ,8 ,9};
+        int arr1[] ={1 ,2 ,3} ;
+        int arr2[] ={2,5,6};
 
-
-       
-        
         merge(arr1, arr2);
-        // for (int i : arr1) {
-        //     System.out.print(i+" ");
-        // }
-        // for (int i : arr2) {
-        //     System.out.print(i+" ");
-        // }
-        
+       
 
-        for(int i=0; i<arr1.length; i++) {
-            //arr1[i] = Integer.parseInt(s.charAt(i));
-         }
-        
     }
 
     private static void merge(int arr1[], int arr2[]){
 
         
-        int i=0;
-        int j=0;
-        int k=0;
-
-        while(i<arr1.length && j<arr2.length){
-
-            if(arr1[i]<arr2[j]){
-                
-               
-                System.out.print(arr1[i]+" ");
-                k++;
+        int i = 0, j = 0, k = arr1.length - 1;
+        while (i <= k && j < arr2.length) {
+            if (arr1[i] < arr2[j])
                 i++;
-            }
-            else{
-
-                
-               System.out.print(arr2[j]+" ");
-                k++;
+            else {
+                int temp = arr2[j];
+                arr2[j] = arr1[k];
+                arr1[k] = temp;
                 j++;
+                k--;
             }
         }
-            while(i<arr1.length){
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);    
 
-                
-           
-               System.out.print(arr1[i]+" ");
-                k++;
-                i++;
-            }
-            while(j<arr2.length){
-               
-                System.out.print(arr2[j]+" ");
-                k++;
-                j++;
-            }
+        System.out.print(Arrays.toString(arr1)+" "+ Arrays.toString(arr2));
+
         }
 
     }
