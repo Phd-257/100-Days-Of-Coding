@@ -3,35 +3,30 @@ package Hundred_Days_Of_Code;
 public class LeetPalindrome {
     
     public static void main(String[] args) {
-        int s = 121;
-        boolean answer = false;
-        String ans = "";
-        int x = s;
-        String j = String.valueOf(s);
-        
-        
+        int k = -121;
+        boolean check = true;
 
-        if(x<0){
-            System.out.println(answer+"  sorry");
-        }
-    
+        String s  = String.valueOf(k);
 
-        else{
-            for (int i = 0; i < j.length(); i++) {
-                
-                ans = ans+String.valueOf(x%10);
-                x= x/10;
+        int i=0;
+        int j= s.length()-1;
+
+        while(i<=j){
+
+            if(s.charAt(i)!= s.charAt(j)){
+                check = false;
+                break;
             }
-            System.out.println(ans);
-
-            if(Integer.parseInt(ans)==s){
-                System.out.println("True !");
-            }
-            else{
-                System.out.println("False");
-            }
-
+           
+            i++;
+            j--;
 
         }
+
+        System.out.println(check);
+
+
+        
+        
     }
 }
