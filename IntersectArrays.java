@@ -6,7 +6,7 @@ public class IntersectArrays {
 
     public static void main(String[] args) {
         
-        int[] nums1  = {1,3,2,2};
+        int[] nums1  = {1,3,2};
         int[] nums2= {2,2};
 
         String st="";
@@ -27,7 +27,7 @@ public class IntersectArrays {
         }  
         
         String[] newk = st.split("");
-        int[] n  = new int[st.length()];
+        int[] n  = new int[(st.length()<((nums1.length<nums2.length)? nums1.length:nums2.length))?st.length():(nums1.length<nums2.length)? nums1.length:nums2.length];
 
         
         for (int i = 0; i < st.length(); i++) {
