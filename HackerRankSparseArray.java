@@ -6,41 +6,33 @@ public class HackerRankSparseArray {
     public static void main(String[] args) {
        
 
-        ArrayList<String> arr = new ArrayList<>();
-        arr.add("aba");
-        arr.add("baba");
-        arr.add("aba");
-        arr.add("xzxb");
-        ArrayList<String> query = new ArrayList<>();
-        arr.add("aba");
-        arr.add("xzxb");
-        arr.add("ab");
-       
-
+        ArrayList<String> strings = new ArrayList<>();
+        strings.add("aba");
+        strings.add("baba");
+        strings.add("aba");
+        strings.add("xzxb");
+        ArrayList<String> queries = new ArrayList<>();
+        queries.add("aba");
+        queries.add("xzxb");
+        queries.add("ab");
         
+  
+        ArrayList<Integer> countArray= new ArrayList<>();
         
-        
-        int k=0;
-        int[] countArray = new int[3];
-        String s = String.join(",", arr);
 
-     
-        System.out.println(s);
-
-
-
-        for (int i = 0; i < query.size(); i++) {
+        for (int i = 0; i < queries.size(); i++) {
             int count=0;
-            for (int index = 0; index < arr.size(); index++) {
+            for (int index = 0; index < strings.size(); index++) {
                 
-                if(query.get(i).equals(arr.get(index))){
-                    System.out.println(query.get(i).equals(arr.get(index)));
+                //System.out.println(query.get(i)==arr.get(index)+ " "+ query.get(i)+" "+arr.get(index));
+                if(queries.get(i)==strings.get(index)){
+                    
                     count++;
                 }
 
             }
-            countArray[k]=count;
-            k++;
+            countArray.add(count);
+           
         }
 
         for (int i : countArray) {
