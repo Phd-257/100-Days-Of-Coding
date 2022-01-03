@@ -3,12 +3,16 @@ class LinkedListRun {
     public static void main(String[] args) {
         
         LinkedList list = new LinkedList();
+        list.append(1);
+        list.append(2);
         list.append(3);
         list.append(4);
         list.append(5);
-        list.preppend(2);
-        list.preppend(1);
-        list.deleteByPosition(0);
+        
+        //list.deleteByPosition(1);
+        list.add(6, 5);
+        
+
         
         System.out.println("lenght: "+list.getLenght());
       
@@ -98,8 +102,8 @@ class LinkedList{
     }
 
     public void deleteByPosition(int position){
-        position = position-1;
-        if(position>=getLenght()|| position<1){
+        
+        if(position>getLenght()-1|| position<0){
             System.out.println("Error");
             return;
         }
@@ -122,6 +126,38 @@ class LinkedList{
          currunt.next = currunt.next.next;
 
     }
+    public void add(int data, int position){
+
+        if(position==0){
+            preppend(data);
+            return;
+        }
+        if(position==getLenght()){
+            append(data);
+            return;
+        }
+        if(position>getLenght()-1){
+            System.out.println("Errror length is "+getLenght());
+            return;
+        }
+        if(position==1){
+            Node tempNode = head.next;
+            head.next = new Node(data);
+            head.next.next = tempNode;
+            return;
+        }
+        Node currunt  = head;
+        int i=0;
+
+        while(i<position-1){
+            currunt=currunt.next;
+            i++;
+        }
+        Node temp = currunt.next;
+        currunt.next = new Node(data);
+        currunt.next.next = temp;
+    }
+
 }
 
 
