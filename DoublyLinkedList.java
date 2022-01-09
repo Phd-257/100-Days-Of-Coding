@@ -14,6 +14,8 @@ class DoublyLinkedList {
         dll.preAppend(20);
         dll.append(30);
         dll.add(100, 2);
+        dll.remove(7);
+       
         //System.out.println("\ntail = "+dll.tail.value);
         
         
@@ -84,6 +86,7 @@ class Dll{
             head.next.prev = temp;
             temp.prev = head;
             head.next = temp;
+            size+=1;
             return;
 
         }
@@ -99,7 +102,8 @@ class Dll{
         temp.next = currunt.next;
         currunt.next.prev =temp;
         temp.prev = currunt;
-        currunt.next = temp;     
+        currunt.next = temp; 
+        size+=1;    
     }
 
     public void printLL(){
@@ -117,6 +121,46 @@ class Dll{
         }
 
         
+    }
+    public void remove(int position){
+
+        if(position>=size || position<0){
+            System.out.println("Null Pointer error");
+            return;
+        }
+
+        if(position==0){
+            head.next.prev = null;
+            head = head.next;
+            size -= 1;
+            return;
+        }
+        if(position==1){
+            head.next.next.prev = head;
+            head.next = head.next.next;
+            size-=1;
+            return;
+        }
+        if (position==(size-1)){
+            
+            tail.prev.next = null;
+            tail= tail.prev ;
+            size=size-1;
+            return;
+        }
+
+        Node currunt = head;
+        int i=0;
+
+        while(i<position-1){
+
+            currunt=currunt.next;
+            i++;
+
+        }
+        currunt.next.next.prev = currunt;
+        currunt.next = currunt.next.next;
+        size-=1;
     }
 
 
