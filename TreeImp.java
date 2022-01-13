@@ -6,7 +6,7 @@ public class TreeImp {
 
     public static void main(String[] args) {
         sc = new Scanner(System.in);
-        
+
          createNode();
     }
 
@@ -16,6 +16,7 @@ public class TreeImp {
         System.out.println("Enter a data: ");
         int data =  sc.nextInt();
 
+        
         if(data == -1) return null;
 
         root = new Node1(data);
